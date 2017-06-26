@@ -1,0 +1,13 @@
+DRC Rules Export File for PCB: C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc
+RuleKind=Width|RuleName=GND Width|Scope=Board|Minimum=13.78
+RuleKind=Clearance|RuleName=HV to other nets Clearance|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=HV to HV Clearance|Scope=Board|Minimum=15.75
+RuleKind=Width|RuleName=Sensors Width|Scope=Board|Minimum=10.00
+RuleKind=Width|RuleName=Processor Width|Scope=Board|Minimum=10.00
+RuleKind=Width|RuleName=LV Width|Scope=Board|Minimum=15.75
+RuleKind=Width|RuleName=HV Width|Scope=Board|Minimum=39.37
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.02
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=Clearance|RuleName=Polygon Clearance|Scope=Board|Minimum=16.93

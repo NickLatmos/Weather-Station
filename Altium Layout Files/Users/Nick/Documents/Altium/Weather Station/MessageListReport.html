@@ -1,0 +1,362 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body { 
+			font-family : verdana;
+		}
+		td, th {  
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;	
+		}
+		th { 
+			background-color : #A6CAF0;
+		
+		}
+		th.column1, td.column1 { 
+			text-align: left;
+			width : auto; 
+		}
+		table { 
+			width : 100%; 
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3 {
+			padding-top : 0.1em;
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top
+		}
+		.front_matter_column1 {
+			text-align : right;
+		}
+		.total_column1, .total_column {
+			font-weight : bold;	
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.front_matter_column2 {
+			text-align : center;
+		}
+		.front_matter_column3 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow 
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Message List</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD14\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Message List</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">2/6/2017</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">5:12:21 μμ</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+</table>
+<hr><a name="IDAPH5VLYQCZWIOIIMNO5B23JVBNA4V51B42DOBIB0NA04SYUOXPK"><table>
+<tr>
+<th class="column1">Class</th>
+<th class="column2">Document</th>
+<th class="column3">Source</th>
+<th class="column4">Message</th>
+<th class="column5">Time</th>
+<th class="column6">Date</th>
+<th class="column7">No.</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing Started </acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:39 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">1</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing Status</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Creating topology map</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:40 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Starting Fan out to Plane</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:40 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">3</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Completed Fan out to Plane in 0 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:40 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">4</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Starting Memory</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:40 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Completed Memory in 0 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:40 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">6</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Starting Layer Patterns</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:40 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">7</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing Status</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">63 of 124 connections routed (50,81%) in 2 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:42 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">8</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Completed Layer Patterns in 1 Second</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:42 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">9</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Starting Main</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:11:42 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">10</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing Status</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">122 of 124 connections routed (98,39%) in 24 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:04 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">11</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Completed Main in 22 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:05 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">12</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Starting Completion</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:05 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">13</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing Status</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">123 of 124 connections routed (99,19%) in 32 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:11 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">14</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Completed Completion in 6 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:11 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">15</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Starting Straighten</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:11 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">16</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing Status</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">123 of 124 connections routed (99,19%) in 34 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:14 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">17</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Completed Straighten in 2 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:14 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">18</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing Status</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">123 of 124 connections routed (99,19%) in 34 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:14 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">19</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:10,2564102564103%" class="column1"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs Event</acronym></a></td>
+<td style="width:11,965811965812%" class="column2"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Weather Station v3.PcbDoc</acronym></a></td>
+<td style="width:5,98290598290598%" class="column3"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Situs</acronym></a></td>
+<td style="width:51,2820512820513%" class="column4"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">Routing finished  with 0 contentions(s). Failed to complete 1 connection(s) in 34 Seconds</acronym></a></td>
+<td style="width:8,54700854700855%" class="column5"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">5:12:14 μμ</acronym></a></td>
+<td style="width:8,54700854700855%" class="column6"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">2/6/2017</acronym></a></td>
+<td style="width:3,41880341880342%" class="column7"><a href="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://?document=C:\Users\Nick\Documents\Altium\Weather Station\Weather Station v3.PcbDoc;viewname=PCBEditor;">20</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>
