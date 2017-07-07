@@ -16,6 +16,7 @@ This repository contains all the source files and the PCB layouts designed durin
  Protocols:
  UART
  I2C
+ 1-Wire
  
  Modems:
  SIM900
