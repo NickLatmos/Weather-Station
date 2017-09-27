@@ -28,7 +28,7 @@ enum MESSAGE_TYPE {
 };
 
 #if USE_STATIC_IP_ADDRESS
-IPAddress station_ip(192, 168, 1, 50);        //ESP8266 IP Address
+IPAddress station_ip(192, 168, 1, 53);        //ESP8266 IP Address
 IPAddress gateway(192, 168, 1, 1);    //Gateway IP
 IPAddress subnet(255, 255, 255, 0);
 #endif
@@ -59,6 +59,11 @@ void setup()
   // 15 seconds to test if there is a WiFi connection and connect to it
   // Our purpose here is to inform MCU about the WiFi network 
   if(connect_to_WiFi(400)){         // 300 * 50ms
+    #if DEBUG
+      Serial.println(F("WiFi connected"));
+      Serial.println(WiFi.localIP());
+      Serial.println(getMacAddress());
+    #endif
     // Send the message that connection was successful until MCU responds with a "CONNECTED"
     while(1)
     {
@@ -82,11 +87,6 @@ void setup()
   }else
     deactivate_WiFi_Modem(FAILED_TO_CONNECT_ON_START);  
   
-  #if DEBUG
-    Serial.println(F("WiFi connected"));
-    Serial.println(WiFi.localIP());
-    Serial.println(getMacAddress());
-  #endif
   
   toggleLedFast(); // Indicates that the coordinator is ready
   serialFlush();   // Clear input serial buffer
