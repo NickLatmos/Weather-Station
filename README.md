@@ -26,7 +26,7 @@ This repository contains all the source files and the PCB layouts designed durin
 ### Prototype
 ![prototype](https://user-images.githubusercontent.com/15786501/30916121-3f060b5e-a3a1-11e7-9634-8b8d39a7bb6e.jpg)
 ### Final
-![station in box](https://user-images.githubusercontent.com/15786501/30916120-3f01e218-a3a1-11e7-9fc6-742f67601b51.jpg)
+![wp_20170822_12_37_40_pro](https://user-images.githubusercontent.com/15786501/30916570-6aad4f78-a3a2-11e7-809e-ad7445fbcc47.jpg)
 
 # Station PCB
 
